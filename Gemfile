@@ -10,7 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'paperclip'
 gem 'less-rails-bootstrap'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
+gem 'smarter_csv'
 gem 'therubyracer', platforms: :ruby
 
 

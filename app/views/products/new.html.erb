@@ -1,0 +1,12 @@
+<%= content_for(:navigation) do %>
+<% end %>
+
+<%= content_for(:header) do %>
+  <h1>Upload new products</h1>
+<% end %>
+
+<%= form_tag "/products_uploads/" do %>
+  <label for="csv">CSV to Upload</label>
+  <%= file_field_tag "product_upload[csv]" %>
+  <%= submit_tag %>
+<% end %>

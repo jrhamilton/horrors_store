@@ -10,10 +10,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 navigation">
+        <% if current_user %>
+          <p>Logged in as <%= current_user.name %></p>
+          <%= link_to 'Logout', logout_path %>
+        <% else %>
+          <%= link_to 'Login', login_path %>
+        <% end %>
         <%= yield(:navigation) %>
       </div>
       <div class="col-md-9 header">
         <%= yield(:header) %>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
       </div>
       <div class="row">
         <%= yield %>

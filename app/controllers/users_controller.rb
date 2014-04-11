@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
-  def index
+  before_filter :authorize, except: [:index]
 
+  def index
+    @users = User.all
+    render 'index'
   end
 
   def new
@@ -15,7 +18,7 @@ class UsersController < ApplicationController
       index
     else
       flash[:alert] = "User not added."
-      render 'new'
+      redirect_to '/users/new'
     end
   end
 
